@@ -7,6 +7,7 @@ const cookieParser = require("cookie-parser");
 const authRouter = require("./router/auth");
 const profileRouter = require("./router/profile");
 const requestRouter = require("./router/requests");
+const userRouter = require('./router/user')
 
 
 app.use(express.json());
@@ -16,6 +17,8 @@ app.use(cookieParser()); // to get cookies back in req and read them
 app.use('/',authRouter);
 app.use('/profile',profileRouter);
 app.use('/request',requestRouter);
+app.use('/user',userRouter);
+
 
 
 connectDB()
